@@ -20,7 +20,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Bgj 23"
+config/name="New Game Project"
 run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://icon.png"
 
@@ -28,17 +28,9 @@ config/icon="res://icon.png"
 
 common/drop_mouse_on_gui_input_disabled=true
 
-[input]
-
-Click={
-"deadzone": 0.5,
-"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
- ]
-}
-
 [mono]
 
-project/assembly_name="Bgj 23"
+project/assembly_name="New Game Project"
 
 [physics]
 

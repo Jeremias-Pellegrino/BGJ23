@@ -10,6 +10,7 @@ var is_moving = false
 var screen_size
 
 var lightTimeLeft = 30
+var lightRadius = 30
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -34,10 +35,19 @@ func _input(event):
 func _on_Timer_timeout():
 	var rand_num :=(randf())
 	print (rand_num)
-	Luz.energy =rand_num
+	Luz.energy = rand_num
 	if rand_num < 0.50:
 		Luz.set_energy(1)
 	Temp.start(rand_num/20)
 	
 	
-
+func _physics_process(delta):
+	handleLight(delta)
+	pass
+	
+func handleLight(delta):
+#	var proportionalValue = 
+	var sineValue = sin(delta/10)
+	var radius = sineValue * lightTimeLeft
+#	Luz.energy = radius
+	
