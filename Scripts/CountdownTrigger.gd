@@ -1,17 +1,13 @@
-extends Node
-
-#export var sounds = []
+class_name CountdownTrigger extends Node
 
 func triggerSoundAfter(delay: float, soundPath: String):
-	var timer = Timer.new()
-	timer.autostart = false
-	timer.one_shot = true
+	$Timer.autostart = false
+	$Timer.one_shot = true
 	
 	var stream = load(soundPath)
 	$AudioStreamPlayer2D.stream = stream
-	
-	timer.connect("timeout", self, "triggerSound")
-	timer.start()
 
-func triggerSound():
+	$Timer.start()
+
+func timerPlaySound():
 	$AudioStreamPlayer2D.play()

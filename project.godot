@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "CountdownTrigger",
+"language": "GDScript",
+"path": "res://Scripts/CountdownTrigger.gd"
+} ]
+_global_script_class_icons={
+"CountdownTrigger": ""
+}
+
 [application]
 
 config/name="Bgj 23"
