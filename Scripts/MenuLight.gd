@@ -41,7 +41,7 @@ func addFlickering():
 	elif rand_amt > 0.75:
 		energy = 1
 		
-	var newDelay = rand_amt/rand_range(1,20)
+	var newDelay = rand_range(0.5,1)
 	
 	print(newDelay)
 	$Timer.start(newDelay)

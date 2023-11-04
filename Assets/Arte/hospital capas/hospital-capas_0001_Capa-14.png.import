@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/WhiteCone.jpg-dfa9620c27ba048ba8fcba8bde4258de.stex"
+path="res://.import/hospital-capas_0001_Capa-14.png-30d315d37b4d9ab3d8fa2c350edb5f6f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/art/Luz/WhiteCone.jpg"
-dest_files=[ "res://.import/WhiteCone.jpg-dfa9620c27ba048ba8fcba8bde4258de.stex" ]
+source_file="res://Assets/Arte/hospital capas/hospital-capas_0001_Capa-14.png"
+dest_files=[ "res://.import/hospital-capas_0001_Capa-14.png-30d315d37b4d9ab3d8fa2c350edb5f6f.stex" ]
 
 [params]
 

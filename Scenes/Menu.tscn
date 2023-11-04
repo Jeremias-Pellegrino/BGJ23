@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/art/Luz/WhiteCone.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/Arte/Luz/WhiteCone.jpg" type="Texture" id=2]
 [ext_resource path="res://Scripts/MenuLight.gd" type="Script" id=3]
 
 [node name="Node2D" type="Node2D"]

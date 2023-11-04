@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spot.png-a1c7bfda7ba4b29fa9e1a2dd7342dcef.stex"
+path="res://.import/ObjSilla.png-d1f7e9221e7509f70cf4d6decac644c6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/art/Luz/spot.png"
-dest_files=[ "res://.import/spot.png-a1c7bfda7ba4b29fa9e1a2dd7342dcef.stex" ]
+source_file="res://Assets/Arte/ObjSilla.png"
+dest_files=[ "res://.import/ObjSilla.png-d1f7e9221e7509f70cf4d6decac644c6.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Player.png-54d4b13ac506f96b99814af866f299ae.stex"
+path="res://.import/WhiteCone.jpg-ade6674170d5cf58cee3d9a9f30c67c9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player.png"
-dest_files=[ "res://.import/Player.png-54d4b13ac506f96b99814af866f299ae.stex" ]
+source_file="res://Assets/Arte/Luz/WhiteCone.jpg"
+dest_files=[ "res://.import/WhiteCone.jpg-ade6674170d5cf58cee3d9a9f30c67c9.stex" ]
 
 [params]
 
