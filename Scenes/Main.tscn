@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/mapa.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/Light2D.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/SineLight.gd" type="Script" id=5]
 [ext_resource path="res://Assets/art/Luz/light.png" type="Texture" id=6]
 
 [node name="Main" type="Node2D"]

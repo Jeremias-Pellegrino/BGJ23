@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/art/Luz/WhiteCone.jpg" type="Texture" id=2]
+[ext_resource path="res://Scripts/MenuLight.gd" type="Script" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1200.0
+margin_bottom = 800.0
+rect_min_size = Vector2( 1200, 800 )
+color = Color( 0.0823529, 0.0196078, 0.0196078, 1 )
+
+[node name="Background" type="Sprite" parent="."]
+
+[node name="SineLight4" type="Light2D" parent="."]
+position = Vector2( 73, -668 )
+scale = Vector2( 0.922337, 2.43511 )
+texture = ExtResource( 2 )
+offset = Vector2( 200, 400 )
+energy = 2.51
+script = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="SineLight4"]
+autostart = true
+
+[connection signal="timeout" from="SineLight4/Timer" to="SineLight4" method="_on_Timer_timeout"]
