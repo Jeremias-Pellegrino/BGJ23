@@ -12,6 +12,9 @@ var screen_size
 var lightTimeLeft = 30
 var lightRadius = 30
 
+
+var x = 0
+
 func _ready():
 	screen_size = get_viewport_rect().size
 
@@ -47,7 +50,9 @@ func _physics_process(delta):
 	
 func handleLight(delta):
 #	var proportionalValue = 
-	var sineValue = sin(delta/10)
-	var radius = sineValue * lightTimeLeft
-#	Luz.energy = radius
+	x += delta
+	var sineValue = sin(x)
+	print(sineValue)
+	var radius = sineValue * 1.62
+	Luz.energy = radius 
 	
