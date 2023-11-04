@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "CountdownTrigger",
 "language": "GDScript",
 "path": "res://Scripts/CountdownTrigger.gd"
+}, {
+"base": "Light2D",
+"class": "SineLight",
+"language": "GDScript",
+"path": "res://Scripts/Light2D.gd"
 } ]
 _global_script_class_icons={
-"CountdownTrigger": ""
+"CountdownTrigger": "",
+"SineLight": ""
 }
 
 [application]

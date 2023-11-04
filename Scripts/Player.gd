@@ -34,25 +34,3 @@ func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
 		target_position = get_global_mouse_position()
 		is_moving = true
-
-func _on_Timer_timeout():
-	var rand_num :=(randf())
-	print (rand_num)
-	Luz.energy = rand_num
-	if rand_num < 0.50:
-		Luz.set_energy(1)
-	Temp.start(rand_num/20)
-	
-	
-func _physics_process(delta):
-	handleLight(delta)
-	pass
-	
-func handleLight(delta):
-#	var proportionalValue = 
-	x += delta
-	var sineValue = sin(x)
-	print(sineValue)
-	var radius = sineValue * 1.62
-	Luz.energy = radius 
-	
