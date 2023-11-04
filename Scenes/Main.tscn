@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/CountdownTrigger.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Main.gd" type="Script" id=3]
+
+[node name="Main" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="CountdownTrigger" parent="." index="0" instance=ExtResource( 2 )]
