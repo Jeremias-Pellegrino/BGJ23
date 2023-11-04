@@ -12,8 +12,6 @@ var screen_size
 var lightTimeLeft = 30
 var lightRadius = 30
 
-var new_texture = preload("res://Assets/Arte/ObjCama.png")
-
 var x = 0
 
 func _ready():
@@ -28,20 +26,22 @@ func _process(delta):
 			is_moving = false
 		
 		position += Vector2(speed * delta, speed * delta).normalized()
-		#position.x = clamp(position.x, 0, screen_size.x)
-		#position.y = clamp(position.y, 0, screen_size.y)
+	
+	var cuadrant = calculateMouseQuadrant()
+	
+	if cuadrant != null:
+		$AnimatedSprite.frame = cuadrant
 
-	if 90 < $Lantern.rotation_degrees && $Lantern.rotation_degrees < 180:
-		$AnimatedSprite.frame = 0
-
-	if 0 < $Lantern.rotation_degrees && $Lantern.rotation_degrees < 90:
-		$AnimatedSprite.frame  = 1
-		
-	if -90 < $Lantern.rotation_degrees && $Lantern.rotation_degrees < 0:
-		$AnimatedSprite.frame  = 2
-		
-	if -180 <  $Lantern.rotation_degrees && $Lantern.rotation_degrees < -90:
-		$AnimatedSprite.frame  = 3
+func calculateMouseQuadrant():
+	var mousePos = get_local_mouse_position()
+	if mousePos.x > 0 && mousePos.y > 0: 
+		return 0
+	if mousePos.x > 0 && mousePos.y < 0: 
+		return 1
+	if mousePos.x < 0 && mousePos.y > 0: 
+		return 2
+	if mousePos.x < 0 && mousePos.y < 0: 
+		return 3
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
