@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hospital-capas_0009_Capa-11.png-7d6d2bb587afdeeb06ef3faf753cec12.stex"
+path="res://.import/hospital-tile-2_0000s_0000_Capa-13.png-d6eb315cbfac5fb039e4ffdfbac17441.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Arte/hospital capas/hospital-capas_0009_Capa-11.png"
-dest_files=[ "res://.import/hospital-capas_0009_Capa-11.png-7d6d2bb587afdeeb06ef3faf753cec12.stex" ]
+source_file="res://Assets/Arte/hospital capas/hospital-tile-2_0000s_0000_Capa-13.png"
+dest_files=[ "res://.import/hospital-tile-2_0000s_0000_Capa-13.png-d6eb315cbfac5fb039e4ffdfbac17441.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

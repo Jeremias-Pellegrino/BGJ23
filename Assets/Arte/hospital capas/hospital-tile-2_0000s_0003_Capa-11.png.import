@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hospital-capas_0001_Capa-14.png-30d315d37b4d9ab3d8fa2c350edb5f6f.stex"
+path="res://.import/hospital-tile-2_0000s_0003_Capa-11.png-329784ba31fe9fb56a11f6eec81c9aac.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Arte/hospital capas/hospital-capas_0001_Capa-14.png"
-dest_files=[ "res://.import/hospital-capas_0001_Capa-14.png-30d315d37b4d9ab3d8fa2c350edb5f6f.stex" ]
+source_file="res://Assets/Arte/hospital capas/hospital-tile-2_0000s_0003_Capa-11.png"
+dest_files=[ "res://.import/hospital-tile-2_0000s_0003_Capa-11.png-329784ba31fe9fb56a11f6eec81c9aac.stex" ]
 
 [params]
 

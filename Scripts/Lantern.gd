@@ -1,4 +1,4 @@
-class_name SineLight extends Light2D
+class_name Lantern extends Light2D
 
 var x = 0
 var lightValue = 1.32
@@ -36,7 +36,7 @@ func _on_Timer_timeout():
 
 func addFlickering():
 	var rand_amt := (randf())
-	print(rand_amt)
+#	print(rand_amt)
 #	energy = rand_amt
 	
 	lightValue += rand_amt / 10

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Arte/mapa.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Arte/hospital capas/hospital-capas_0000s_0000_piso-copia-5.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Arte/hospital capas/hospital-tile-2_0000s_0002_piso-copia-5.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/SineLight.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Arte/Luz/light.png" type="Texture" id=6]
 
@@ -20,34 +21,25 @@ surfaces/0 = {
 }
 
 [sub_resource type="NavigationPolygon" id=2]
-vertices = PoolVector2Array( -1169, 467, -959, 109, -498, 58, -166, 164, -341, 410 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ) ]
-outlines = [ PoolVector2Array( -1169, 467, -959, 109, -498, 58, -166, 164, -341, 410 ) ]
+vertices = PoolVector2Array( -498, 58, 111, 99, -1048, 784, -1658, 427, -478, -233 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 3, 4, 0 ) ]
+outlines = [ PoolVector2Array( -1658, 427, -478, -233, -498, 58, 111, 99, -1048, 784 ) ]
 
 [node name="Main" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="BlackBackground" type="Sprite" parent="."]
-visible = false
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
+visible = false
 scale = Vector2( 3, 3 )
 
 [node name="Map" type="MeshInstance2D" parent="."]
+visible = false
 scale = Vector2( 3, 3 )
 mesh = SubResource( 1 )
-texture = ExtResource( 3 )
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2( -411.5, 63 )
-scale = Vector2( 18.15, 28.2 )
-polygon = PoolVector2Array( -81.4601, 0.0709214, 38.6501, -44.6099, 39.0358, -40.6028, -80.6336, 3.01418 )
-
-[node name="Sprite" type="Sprite" parent="Area2D"]
-scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -94,7 +86,7 @@ script = ExtResource( 5 )
 autostart = true
 
 [node name="RoundLight4" type="Light2D" parent="."]
-position = Vector2( -1002, 105 )
+position = Vector2( -921, 27 )
 rotation = -3.14159
 texture = ExtResource( 6 )
 texture_scale = 0.8
@@ -109,7 +101,7 @@ autostart = true
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -1096, 291 )
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="."]
+[node name="Navmesh" type="NavigationPolygonInstance" parent="."]
 navpoly = SubResource( 2 )
 
 [connection signal="timeout" from="RoundLight/Timer" to="RoundLight" method="_on_Timer_timeout"]

@@ -27,7 +27,7 @@ func _on_Timer_timeout():
 
 func addFlickering():
 	var rand_amt := (randf())
-	print(rand_amt)
+#	print(rand_amt)
 #	energy = rand_amt
 	
 #	lightValue += 
@@ -43,6 +43,6 @@ func addFlickering():
 		
 	var newDelay = rand_range(0.5,1)
 	
-	print(newDelay)
+#	print(newDelay)
 	$Timer.start(newDelay)
 	pass
