@@ -1,6 +1,8 @@
 extends Node
 
-var countdownSFX: CountdownTrigger = preload("res://Scenes/CountdownTrigger.tscn")
+var countdownSFXScene = preload("res://Scenes/CountdownTrigger.tscn")
 
-func playSFX():
-	var countdownSFXI = countdownSFX.new()
+func playSFX(delay: float, soundPath: String):
+	var countdownTrigger: CountdownTrigger = countdownSFXScene.instance()
+	add_child(countdownTrigger)
+	countdownTrigger.triggerSoundAfter(delay, soundPath)

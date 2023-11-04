@@ -7,7 +7,7 @@ func triggerSoundAfter(delay: float, soundPath: String):
 	var stream = load(soundPath)
 	$AudioStreamPlayer2D.stream = stream
 
-	$Timer.start()
+	$Timer.start(delay)
 
 func timerPlaySound():
 	$AudioStreamPlayer2D.play()
