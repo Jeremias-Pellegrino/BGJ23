@@ -12,6 +12,7 @@ var screen_size
 var lightTimeLeft = 30
 var lightRadius = 30
 
+#var new_texture = preload("res://Assets/Passport1Closed.png")
 
 var x = 0
 
@@ -29,6 +30,11 @@ func _process(delta):
 		position += Vector2(speed * delta, speed * delta).normalized()
 		#position.x = clamp(position.x, 0, screen_size.x)
 		#position.y = clamp(position.y, 0, screen_size.y)
+	
+	if $Lantern.rotation_degrees > 180:
+#		$Icon.texture
+#		print($Lantern.rotation)
+		pass
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
