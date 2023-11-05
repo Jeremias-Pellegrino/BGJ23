@@ -85,7 +85,6 @@ scale = Vector2( 3, 3 )
 [node name="Sprite3" type="Sprite" parent="Nivel/Sprites - para que son\?"]
 
 [node name="Walls2" type="Sprite" parent="Nivel"]
-visible = false
 position = Vector2( -511, 1549 )
 scale = Vector2( 3, 3 )
 

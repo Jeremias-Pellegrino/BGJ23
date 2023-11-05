@@ -1,19 +1,27 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://Assets/Imagen/portada/comienzo.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Imagen/Luz/WhiteCone.jpg" type="Texture" id=2]
 [ext_resource path="res://Scripts/MenuLight.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=4]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1200.0
-margin_bottom = 800.0
+visible = false
+margin_left = 15.0
+margin_top = 6.0
+margin_right = 1215.0
+margin_bottom = 806.0
 rect_min_size = Vector2( 1200, 800 )
 color = Color( 0.0823529, 0.0196078, 0.0196078, 1 )
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 504, 368 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 513, 304.125 )
+scale = Vector2( 0.514, 0.41244 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 1, 1, 1, 0 )
 
 [node name="SineLight4" type="Light2D" parent="."]
 visible = false
@@ -27,4 +35,12 @@ script = ExtResource( 3 )
 [node name="Timer" type="Timer" parent="SineLight4"]
 autostart = true
 
+[node name="Button" type="Button" parent="."]
+margin_left = 369.0
+margin_top = 507.0
+margin_right = 644.0
+margin_bottom = 572.0
+text = "COMENZAR"
+
 [connection signal="timeout" from="SineLight4/Timer" to="SineLight4" method="_on_Timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
