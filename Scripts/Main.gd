@@ -43,16 +43,51 @@ func setup_navserver():
 	Navigation2DServer.region_set_transform(region, Transform())
 	Navigation2DServer.region_set_map(region, map)
 
-	# sets navigation mesh for the region
-	var navigation_poly = NavigationMesh.new()
-	
-#	TODO: check here if it's possible to use the polygons from texture converted to mesh 
-	navigation_poly = $Navmesh.navpoly
-	Navigation2DServer.region_set_navpoly(region, navigation_poly)
-
+	setupNavMesh(region)
 	# wait for Navigation2DServer sync to adapt to made changes
 	yield(get_tree(), "physics_frame")
 
+func setupNavMesh(region):
+	
+	# sets navigation mesh for the region
+#	var navigation_poly = NavigationMesh.new()
+	
+#	TODO: check here if it's possible to use the polygons from texture converted to mesh 
+	var texturePolygons = $PolyFromTexture.polygons
+	var navmesh = $Navmesh.navpoly
+
+	print("$Navmesh.navpoly.polygons: ", $Navmesh.navpoly.polygons)
+	print("$Navmesh.navpoly.vertices: ", $Navmesh.navpoly.vertices)
+	print("$PolyFromTexture.polygons: ", $PolyFromTexture.polygons)
+	print("$PolyFromTexture.polygon: ", $PolyFromTexture.polygon)
+	print("$Node/Area2D/CollisionPolygon2D.polygon: ", $Node/Area2D/CollisionPolygon2D.polygon)
+	
+	
+	var vertices = $PolyFromTexture.polygon
+	var poly = polyFrom($PolyFromTexture.transform, vertices)
+	
+#	poly = polyFrom($Node/Area2D/CollisionPolygon2D.polygon)
+	
+	Navigation2DServer.region_set_navpoly(region, poly)
+
+func polyFromCollider(node):
+	var new_navigation_polygon: NavigationPolygon = NavigationPolygon.new()
+	var collisionpolygon_transform: Transform2D = node.get_global_transform()
+	var collisionpolygon = node.polygon
+	var new_collision_outline = collisionpolygon_transform * collisionpolygon
+	new_navigation_polygon.add_outline(new_collision_outline)
+	
+func _draw():
+	draw_colored_polygon($PolyFromTexture.polygon, Color.darkorange)
+
+func polyFrom(ptransform: Transform2D, vertices):
+	var polygon = NavigationPolygon.new()
+	var outline = ptransform.xform(vertices) #	PoolVector2Array([Vector2(0, 0), Vector2(0, 50), Vector2(50, 50), Vector2(50, 0)])
+	polygon.add_outline(outline)
+	polygon.make_polygons_from_outlines()
+	
+	return polygon
+		
 
 func move_along_path(distance):
 	var last_point = character.position
