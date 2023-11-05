@@ -11,6 +11,7 @@ func _ready():
 	# use call deferred to make sure the entire SceneTree Nodes are setup
 	# else yield on 'physics_frame' in a _ready() might get stuck
 	call_deferred("setup_navserver")
+	
 
 func _process(delta):
 	var walk_distance = character_speed * delta

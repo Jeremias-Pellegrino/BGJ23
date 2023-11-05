@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Peggy.mp3-c14572964261cf08ae61a4329a3edfcd.mp3str"
+
+[deps]
+
+source_file="res://Assets/Musica/Peggy.mp3"
+dest_files=[ "res://.import/Peggy.mp3-c14572964261cf08ae61a4329a3edfcd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

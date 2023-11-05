@@ -1,11 +1,13 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Arte/hospital capas/hospital-tile-2_0002_piso-copia-5.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Arte/hospital capas/hospital-tile-2_0001_Capa-12.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Imagen/Luz/light.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Imagen/Luz/spot.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/SineLight.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Arte/Luz/light.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Imagen/hospital capas/hospital-tile-2_0001_Capa-12.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/AudioManager.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Imagen/hospital capas/hospital-tile-2_0002_piso-copia-5.png" type="Texture" id=8]
 
 [sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( 928, 320, 1320, 552, 1128, 640, 928, 520, 384, -480, 176, -592, 328, -672, 528, -560, 1520, -448, 1680, -368, 1472, -248, 1328, -336, -1056, 744, -1592, 432, -1392, 328, 1120, -680, 1280, -592, 1080, -472, 920, -568, -96, 912, -72, 1088, -616, 776, -320, 784, 944, -120, 928, 72, 280, -248, 480, -128, 336, -48, 128, -160, -112, -24, 88, 96, -264, -104, 328, -1128, 472, -1040, -1496, 96, -1784, 96, -1272, 240, -8, -248, -208, -360, -72, -448, 136, -336, 1328, 96, 1312, 288, 1856, -16, 1544, -32, 728, -504, 728, -680, -456, -216 )
@@ -33,6 +35,8 @@ polygon = PoolVector2Array( -48, -128, -34.6667, -128, -24, -133.333, -24, -141.
 [node name="Main" type="Node2D"]
 script = ExtResource( 4 )
 
+[node name="AudioManager" parent="." instance=ExtResource( 7 )]
+
 [node name="Nivel" type="Node2D" parent="."]
 
 [node name="Navmesh" type="NavigationPolygonInstance" parent="Nivel"]
@@ -41,14 +45,14 @@ navpoly = SubResource( 2 )
 
 [node name="FloorPolygon" type="Polygon2D" parent="Nivel"]
 scale = Vector2( 3, 3 )
-texture = ExtResource( 2 )
+texture = ExtResource( 8 )
 polygon = PoolVector2Array( 177.5, -350.7, 177.5, -344.5, 174, -344.5, -478.5, 31.9, -418.4, 66.7, -155, -84.5, -153, -84.5, -88.4, -47.3, -25.7, -82, -90.5, -118.3, -90.5, -121.6, -29, -157.5, -27, -157.5, -21.5, -160.8, -19.5, -159.7, -19.5, -158.6, 43.6, -123.3, 106.4, -158, 41.2, -195.5, 42, -198.5, 44, -198.5, 109, -236.5, 111, -236.5, 176, -198.5, 244.5, -238, 244.5, -234.6, 307.6, -199.3, 376.5, -237.9, 376.5, -234.6, 442.8, -196.5, 442, -193.5, 440, -193.5, 379.4, -158.1, 440, -122.5, 505, -160.5, 507, -160.5, 573.5, -122.7, 573.5, -119.4, 511.4, -82.1, 640.8, -6.5, 640, -3.5, 638, -3.5, 441, 110.5, 439, 110.5, 308.4, 35.3, -82.5, 259.9, -22.4, 294.7, 307, 105.5, 309, 105.5, 442.5, 182.3, 442.5, 185.6, 388, 217.5, 386, 217.5, 373.5, 224.8, 371.5, 223.7, 371.5, 222.6, 308.5, 187.3, -21, 376.5, -23, 376.5, -222.5, 261.7, -222.5, 258.3, 307, -46.5, 309, -46.5, 440, 29.5, 502.4, -6, 242, -155.5, 113.6, -82, 177.5, -46.7, 177.5, -40.5, 174, -40.5, 111, -3.5, 109, -3.5, 44, -41.5, -0.5, -16.4, -0.5, -15.3, -16.5, -6.10001, 45.5, 29.3, 45.5, 35.5, 42, 35.5, -351, 262.5, -353, 262.5, -551.5, 148.7, -551.5, 145.4, -489.4, 108.1, -618.8, 32.5, -618, 29.5, -616, 29.5, 107.5, -386.6, 107.5, -389.9 )
 uv = PoolVector2Array( 846, 92.8, 846, 99, 842.5, 99, 190, 475.4, 250.1, 510.2, 513.5, 359, 515.5, 359, 580.1, 396.2, 642.8, 361.5, 578, 325.2, 578, 321.9, 639.5, 286, 641.5, 286, 647, 282.7, 649, 283.8, 649, 284.9, 712.1, 320.2, 774.9, 285.5, 709.7, 248, 710.5, 245, 712.5, 245, 777.5, 207, 779.5, 207, 844.5, 245, 913, 205.5, 913, 208.9, 976.1, 244.2, 1045, 205.6, 1045, 208.9, 1111.3, 247, 1110.5, 250, 1108.5, 250, 1047.9, 285.4, 1108.5, 321, 1173.5, 283, 1175.5, 283, 1242, 320.8, 1242, 324.1, 1179.9, 361.4, 1309.3, 437, 1308.5, 440, 1306.5, 440, 1109.5, 554, 1107.5, 554, 976.9, 478.8, 586, 703.4, 646.1, 738.2, 975.5, 549, 977.5, 549, 1111, 625.8, 1111, 629.1, 1056.5, 661, 1054.5, 661, 1042, 668.3, 1040, 667.2, 1040, 666.1, 977, 630.8, 647.5, 820, 645.5, 820, 446, 705.2, 446, 701.8, 975.5, 397, 977.5, 397, 1108.5, 473, 1170.9, 437.5, 910.5, 288, 782.1, 361.5, 846, 396.8, 846, 403, 842.5, 403, 779.5, 440, 777.5, 440, 712.5, 402, 668, 427.1, 668, 428.2, 652, 437.4, 714, 472.8, 714, 479, 710.5, 479, 317.5, 706, 315.5, 706, 117, 592.2, 117, 588.9, 179.1, 551.6, 49.7, 476, 50.5, 473, 52.5, 473, 776, 56.9, 776, 53.6 )
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88 ) ]
 
 [node name="Walls" type="Sprite" parent="Nivel"]
 scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 
 [node name="Occluders" type="Node2D" parent="Nivel"]
 scale = Vector2( 3, 3 )
@@ -84,7 +88,6 @@ scale = Vector2( 3, 3 )
 visible = false
 position = Vector2( -511, 1549 )
 scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0, 0, 0, 1 )
@@ -92,7 +95,7 @@ color = Color( 0, 0, 0, 1 )
 [node name="RoundLight" type="Light2D" parent="."]
 position = Vector2( -2, 0.333333 )
 rotation = -3.14159
-texture = ExtResource( 6 )
+texture = ExtResource( 2 )
 texture_scale = 0.1
 color = Color( 0.458824, 0.176471, 0.176471, 1 )
 energy = 0.89
@@ -108,7 +111,7 @@ autostart = true
 [node name="RoundLight2" type="Light2D" parent="."]
 position = Vector2( -601, -142 )
 rotation = -3.14159
-texture = ExtResource( 6 )
+texture = ExtResource( 2 )
 texture_scale = 0.8
 color = Color( 0.458824, 0.176471, 0.176471, 1 )
 energy = 0.89
@@ -124,7 +127,7 @@ autostart = true
 [node name="RoundLight3" type="Light2D" parent="."]
 position = Vector2( -113, -414 )
 rotation = -3.14159
-texture = ExtResource( 6 )
+texture = ExtResource( 2 )
 texture_scale = 0.78
 color = Color( 0.458824, 0.176471, 0.176471, 1 )
 energy = 0.89
@@ -140,7 +143,7 @@ autostart = true
 [node name="RoundLight4" type="Light2D" parent="."]
 position = Vector2( -921, 27 )
 rotation = -3.14159
-texture = ExtResource( 6 )
+texture = ExtResource( 3 )
 texture_scale = 0.8
 color = Color( 0.458824, 0.176471, 0.176471, 1 )
 energy = 0.89
