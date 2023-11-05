@@ -2,35 +2,23 @@ extends Node2D
 
 export(float) var character_speed = 400.0
 var path = []
-
 var map
 
 onready var character = $Player
-
+onready var navMeshPoly = $Nivel/Floor
 
 func _ready():
 	# use call deferred to make sure the entire SceneTree Nodes are setup
 	# else yield on 'physics_frame' in a _ready() might get stuck
 	call_deferred("setup_navserver")
 
-
 func _process(delta):
 	var walk_distance = character_speed * delta
 	move_along_path(walk_distance)
 
-
-# The "click" event is a custom input action defined in
-# Project > Project Settings > Input Map tab.
-
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
-#		target_position = get_global_mouse_position()
-#		is_moving = true
-		
-#	if not event.is_action_pressed("click"):
-#		return
 		_update_navigation_path(character.position, get_local_mouse_position())
-
 
 func setup_navserver():
 
@@ -43,32 +31,28 @@ func setup_navserver():
 	Navigation2DServer.region_set_transform(region, Transform())
 	Navigation2DServer.region_set_map(region, map)
 
-
 # Load the texture's based collision's polygon
-#	setupNavMesh(region)
-
+	setupNavMesh(region)
 
 	# wait for Navigation2DServer sync to adapt to made changes
 	yield(get_tree(), "physics_frame")
 
 func setupNavMesh(region):
 #	var navmesh = $Navmesh.navpoly
-	var poly = polyFrom($PolyFromTexture)
+	var poly = polyFrom(navMeshPoly)
 	Navigation2DServer.region_set_navpoly(region, poly)
-
-#TODO: debug purposes; Remove this later
-func _draw():
-	pass
-#	draw_colored_polygon($PolyFromTexture.polygon, Color.darkorange)
-
+	
 func polyFrom(node: Polygon2D):
 	var polygon = NavigationPolygon.new()
 	var outline = node.transform.xform(node.polygon) #	PoolVector2Array([Vector2(0, 0), Vector2(0, 50), Vector2(50, 50), Vector2(50, 0)])
 	polygon.add_outline(outline)
 	polygon.make_polygons_from_outlines()
-	
 	return polygon
 		
+#TODO: debug purposes; Remove this later
+func _draw():
+	pass
+#	draw_colored_polygon($PolyFromTexture.polygon, Color.darkorange)
 
 func move_along_path(distance):
 	var last_point = character.position
