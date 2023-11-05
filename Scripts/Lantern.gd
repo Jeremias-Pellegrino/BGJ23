@@ -10,7 +10,7 @@ func _ready():
 	
 func _process(delta):
 	look_at(get_global_mouse_position())
-	lightValue -= delta/10
+	lightValue -= delta/100
 
 func _physics_process(delta):
 	handleLight(delta)
