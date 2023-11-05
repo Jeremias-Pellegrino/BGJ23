@@ -51,6 +51,25 @@ position = Vector2( -10, -40 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 6 )
 
+[node name="Lantern2" type="Light2D" parent="AnimatedSprite"]
+position = Vector2( 5, -20 )
+rotation = -3.14159
+scale = Vector2( 3, 1 )
+texture = ExtResource( 1 )
+offset = Vector2( 40, 18 )
+texture_scale = 4.0
+color = Color( 0.458824, 0.176471, 0.176471, 1 )
+energy = 1.73
+range_height = -225.5
+shadow_enabled = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Timer" type="Timer" parent="AnimatedSprite/Lantern2"]
+autostart = true
+
 [node name="Lantern" type="Light2D" parent="AnimatedSprite"]
 position = Vector2( 5, 2.33333 )
 rotation = -3.14159
@@ -94,5 +113,6 @@ limit_top = -1250
 limit_right = 2000
 limit_bottom = 1250
 
+[connection signal="timeout" from="AnimatedSprite/Lantern2/Timer" to="AnimatedSprite/Lantern2" method="_on_Timer_timeout"]
 [connection signal="timeout" from="AnimatedSprite/Lantern/Timer" to="AnimatedSprite/Lantern" method="_on_Timer_timeout"]
 [connection signal="timeout" from="AnimatedSprite/RoundLight/Timer" to="AnimatedSprite/RoundLight" method="_on_Timer_timeout"]

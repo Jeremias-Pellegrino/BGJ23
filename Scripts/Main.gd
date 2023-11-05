@@ -34,7 +34,7 @@ func setup_navserver():
 # Load the texture's based collision's polygon
 #	setupNavMesh(region)
 
-	Navigation2DServer.region_set_navpoly(region, $Navmesh.navpoly)
+	Navigation2DServer.region_set_navpoly(region, $Nivel/Navmesh.navpoly)
 	
 	# wait for Navigation2DServer sync to adapt to made changes
 	yield(get_tree(), "physics_frame")
