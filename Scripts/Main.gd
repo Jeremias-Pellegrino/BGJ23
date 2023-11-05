@@ -43,16 +43,29 @@ func setup_navserver():
 	Navigation2DServer.region_set_transform(region, Transform())
 	Navigation2DServer.region_set_map(region, map)
 
-	# sets navigation mesh for the region
-	var navigation_poly = NavigationMesh.new()
-	
-#	TODO: check here if it's possible to use the polygons from texture converted to mesh 
-	navigation_poly = $Navmesh.navpoly
-	Navigation2DServer.region_set_navpoly(region, navigation_poly)
-
+	setupNavMesh(region)
 	# wait for Navigation2DServer sync to adapt to made changes
 	yield(get_tree(), "physics_frame")
 
+func setupNavMesh(region):
+	var texturePolygons = $PolyFromTexture.polygons
+	var navmesh = $Navmesh.navpoly
+	
+	var poly = polyFrom($PolyFromTexture)
+	Navigation2DServer.region_set_navpoly(region, poly)
+
+#TODO: debug purposes; Remove this later
+func _draw():
+	draw_colored_polygon($PolyFromTexture.polygon, Color.darkorange)
+
+func polyFrom(node: Polygon2D):
+	var polygon = NavigationPolygon.new()
+	var outline = node.transform.xform(node.polygon) #	PoolVector2Array([Vector2(0, 0), Vector2(0, 50), Vector2(50, 50), Vector2(50, 0)])
+	polygon.add_outline(outline)
+	polygon.make_polygons_from_outlines()
+	
+	return polygon
+		
 
 func move_along_path(distance):
 	var last_point = character.position
