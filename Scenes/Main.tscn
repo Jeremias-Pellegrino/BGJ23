@@ -1,11 +1,30 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Arte/mapa.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Arte/hospital capas/hospital-tile-2_0000s_0002_piso-copia-5.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Arte/hospital capas/hospital-tile-2_0000_Capa-13.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/SineLight.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Arte/Luz/light.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Arte/hospital capas/hospital-tile-2_0001_Capa-12.png" type="Texture" id=7]
+
+[sub_resource type="OccluderPolygon2D" id=4]
+polygon = PoolVector2Array( 309.333, 184, 373.333, 221.333, 440, 184, 440, 144, 306.667, 69.3333, -21.3333, 261.333, -85.3333, 221.333, -50.6667, 240, 309.333, 32, 440, 109.333, 637.333, -5.33333, 640, -42.6667, 669.333, -42.6667, 661.333, 405.333, -224, 405.333, -221.333, 258.667, -21.3333, 373.333 )
+
+[sub_resource type="OccluderPolygon2D" id=5]
+polygon = PoolVector2Array( -616, -10.6667, -672, -10.6667, -672, 309.333, -221.333, 306.667, -221.333, 224, 309.333, -82.6667, 440, -5.33333, 474.667, -26.6667, 242.667, -157.333, 146.667, -101.333, 112, -120, 176, -80, 176, -42.6667, 109.333, -5.33333, 42.6667, -42.6667, 13.3333, -26.6667, -18.6667, -42.6667, 45.3333, -2.66667, 45.3333, 32, -349.333, 258.667, -552, 146.667, -552, 106.667, -482.667, 72, -520, 88, -540.615, 74.7862, -616, 32 )
+
+[sub_resource type="OccluderPolygon2D" id=6]
+polygon = PoolVector2Array( 637.333, -42.6667, 506.667, -117.333, 541.333, -101.333, 570.667, -120, 570.667, -157.333, 506.667, -194.667, 440, -157.333, 373.333, -194.667, 408, -178.667, 440, -197.333, 440, -234.667, 373.333, -272, 309.333, -234.667, 242.667, -272, 176, -234.667, 112, -272, 42.6667, -232, 42.6667, -197.333, 74.6667, -178.667, 109.333, -194.667, 45.3333, -157.333, -21.3333, -194.667, -88, -157.333, -88, -120, -56, -101.333, -21.3333, -120, -88, -80, -154.667, -120, -418.667, 32, -482.667, -5.33333, -448, 10.6667, 176, -346.667, 178.667, -386.667, 106.667, -426.667, -616, -5.33333, -669.333, -8, -669.333, -426.667, 661.333, -442.667, 666.667, -26.6667 )
+
+[sub_resource type="OccluderPolygon2D" id=7]
+polygon = PoolVector2Array( 285.333, 128, 285.333, 133.333, 290.667, 133.333, 304, 133.333, 309.333, 128, 309.333, 120, 309.333, 117.333, 306.667, 122.667, 301.333, 125.333, 293.333, 128 )
+
+[sub_resource type="OccluderPolygon2D" id=8]
+polygon = PoolVector2Array( 352, -216, 357.333, -213.333, 373.333, -221.333, 373.333, -224, 357.333, -216, 352, -218.667 )
+
+[sub_resource type="OccluderPolygon2D" id=9]
+polygon = PoolVector2Array( -48, -128, -34.6667, -128, -24, -133.333, -24, -141.333, -37.3333, -133.333, -48, -133.333 )
 
 [sub_resource type="ArrayMesh" id=1]
 surfaces/0 = {
@@ -20,17 +39,52 @@ surfaces/0 = {
 "vertex_count": 104
 }
 
+[sub_resource type="StreamTexture" id=3]
+load_path = "res://.import/hospital-tile-2_0000s_0002_piso-copia-5.png-b8ce68e5fe264ae3923214813d9faf34.stex"
+
 [sub_resource type="NavigationPolygon" id=2]
-vertices = PoolVector2Array( -498, 58, 111, 99, -1048, 784, -1658, 427, -478, -233 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 3, 4, 0 ) ]
-outlines = [ PoolVector2Array( -1658, 427, -478, -233, -498, 58, 111, 99, -1048, 784 ) ]
+vertices = PoolVector2Array( 928, 320, 1320, 552, 1128, 640, 928, 520, 384, -480, 176, -592, 328, -672, 528, -560, 1520, -448, 1680, -368, 1472, -248, 1328, -336, -1056, 744, -1592, 432, -1392, 328, 1120, -680, 1280, -592, 1080, -472, 920, -568, -96, 912, -72, 1088, -616, 776, -320, 784, 944, -120, 928, 72, 280, -248, 480, -128, 336, -48, 128, -160, -112, -24, 88, 96, -264, -104, 328, -1128, 472, -1040, -1496, 96, -1784, 96, -1272, 240, -8, -248, -208, -360, -72, -448, 136, -336, 1328, 96, 1312, 288, 1856, -16, 1544, -32, 728, -504, 728, -680, -456, -216 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 8, 9, 10, 11 ), PoolIntArray( 12, 13, 14 ), PoolIntArray( 15, 16, 17, 18 ), PoolIntArray( 19, 0, 3, 20 ), PoolIntArray( 19, 20, 21, 22 ), PoolIntArray( 22, 21, 23, 24 ), PoolIntArray( 25, 26, 27, 28 ), PoolIntArray( 29, 30, 12, 31 ), PoolIntArray( 32, 33, 34, 35 ), PoolIntArray( 14, 35, 34, 36 ), PoolIntArray( 37, 38, 39, 40 ), PoolIntArray( 24, 23, 41, 42 ), PoolIntArray( 43, 42, 41, 44 ), PoolIntArray( 10, 43, 44, 45 ), PoolIntArray( 11, 10, 45, 17 ), PoolIntArray( 46, 18, 17, 45, 7 ), PoolIntArray( 4, 7, 45, 25, 40 ), PoolIntArray( 37, 40, 25, 28, 29 ), PoolIntArray( 31, 37, 29 ), PoolIntArray( 36, 47, 31, 12, 14 ) ]
+outlines = [ PoolVector2Array( -1592, 432, -1392, 328, -1784, 96, 328, -1128, 472, -1040, -1496, 96, -1272, 240, -456, -216, -264, -104, -8, -248, -208, -360, -72, -448, 136, -336, 384, -480, 176, -592, 328, -672, 528, -560, 728, -680, 920, -568, 1120, -680, 1280, -592, 1080, -472, 1328, -336, 1520, -448, 1680, -368, 1472, -248, 1856, -16, 1312, 288, 928, 72, -320, 784, -96, 912, 928, 320, 1320, 552, 1128, 640, 928, 520, -72, 1088, -616, 776, 944, -120, 1328, 96, 1544, -32, 728, -504, 280, -248, 480, -128, 336, -48, 128, -160, -112, -24, 88, 96, -1056, 744 ) ]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="BlackBackground" type="Sprite" parent="."]
+[node name="NIvel" type="Sprite" parent="."]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NIvel"]
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="NIvel"]
+texture = ExtResource( 7 )
+
+[node name="Sprite3" type="Sprite" parent="NIvel"]
+
+[node name="LightOccluder2D_1" type="LightOccluder2D" parent="NIvel"]
+occluder = SubResource( 4 )
+
+[node name="LightOccluder2D_2" type="LightOccluder2D" parent="NIvel"]
+occluder = SubResource( 5 )
+
+[node name="LightOccluder2D_3" type="LightOccluder2D" parent="NIvel"]
+occluder = SubResource( 6 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="NIvel"]
+visible = false
+occluder = SubResource( 7 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="NIvel/LightOccluder2D"]
+visible = false
+occluder = SubResource( 8 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="NIvel/LightOccluder2D/LightOccluder2D"]
+visible = false
+occluder = SubResource( 9 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 visible = false
@@ -40,13 +94,14 @@ scale = Vector2( 3, 3 )
 visible = false
 scale = Vector2( 3, 3 )
 mesh = SubResource( 1 )
-texture = ExtResource( 3 )
+texture = SubResource( 3 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="RoundLight" type="Light2D" parent="."]
+visible = false
 position = Vector2( -2, 0.333333 )
 rotation = -3.14159
 texture = ExtResource( 6 )
@@ -60,6 +115,7 @@ script = ExtResource( 5 )
 autostart = true
 
 [node name="RoundLight2" type="Light2D" parent="."]
+visible = false
 position = Vector2( -601, -142 )
 rotation = -3.14159
 texture = ExtResource( 6 )
@@ -73,6 +129,7 @@ script = ExtResource( 5 )
 autostart = true
 
 [node name="RoundLight3" type="Light2D" parent="."]
+visible = false
 position = Vector2( -113, -414 )
 rotation = -3.14159
 texture = ExtResource( 6 )
@@ -86,6 +143,7 @@ script = ExtResource( 5 )
 autostart = true
 
 [node name="RoundLight4" type="Light2D" parent="."]
+visible = false
 position = Vector2( -921, 27 )
 rotation = -3.14159
 texture = ExtResource( 6 )
@@ -99,7 +157,7 @@ script = ExtResource( 5 )
 autostart = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -1096, 291 )
+position = Vector2( 368, -1088 )
 
 [node name="Navmesh" type="NavigationPolygonInstance" parent="."]
 navpoly = SubResource( 2 )
