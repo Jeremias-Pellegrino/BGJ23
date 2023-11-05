@@ -1,12 +1,10 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Arte/mapa.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Arte/hospital capas/hospital-tile-2_0000_Capa-13.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/SineLight.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Arte/Luz/light.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Arte/hospital capas/hospital-tile-2_0001_Capa-12.png" type="Texture" id=7]
 
 [sub_resource type="OccluderPolygon2D" id=4]
 polygon = PoolVector2Array( 309.333, 184, 373.333, 221.333, 440, 184, 440, 144, 306.667, 69.3333, -21.3333, 261.333, -85.3333, 221.333, -50.6667, 240, 309.333, 32, 440, 109.333, 637.333, -5.33333, 640, -42.6667, 669.333, -42.6667, 661.333, 405.333, -224, 405.333, -221.333, 258.667, -21.3333, 373.333 )
@@ -40,7 +38,6 @@ surfaces/0 = {
 }
 
 [sub_resource type="StreamTexture" id=3]
-load_path = "res://.import/hospital-tile-2_0000s_0002_piso-copia-5.png-b8ce68e5fe264ae3923214813d9faf34.stex"
 
 [sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( 928, 320, 1320, 552, 1128, 640, 928, 520, 384, -480, 176, -592, 328, -672, 528, -560, 1520, -448, 1680, -368, 1472, -248, 1328, -336, -1056, 744, -1592, 432, -1392, 328, 1120, -680, 1280, -592, 1080, -472, 920, -568, -96, 912, -72, 1088, -616, 776, -320, 784, 944, -120, 928, 72, 280, -248, 480, -128, 336, -48, 128, -160, -112, -24, 88, 96, -264, -104, 328, -1128, 472, -1040, -1496, 96, -1784, 96, -1272, 240, -8, -248, -208, -360, -72, -448, 136, -336, 1328, 96, 1312, 288, 1856, -16, 1544, -32, 728, -504, 728, -680, -456, -216 )
@@ -58,10 +55,8 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="NIvel"]
-texture = ExtResource( 3 )
 
 [node name="Sprite2" type="Sprite" parent="NIvel"]
-texture = ExtResource( 7 )
 
 [node name="Sprite3" type="Sprite" parent="NIvel"]
 
@@ -91,12 +86,12 @@ visible = false
 scale = Vector2( 3, 3 )
 
 [node name="Map" type="MeshInstance2D" parent="."]
-visible = false
 scale = Vector2( 3, 3 )
 mesh = SubResource( 1 )
 texture = SubResource( 3 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="RoundLight" type="Light2D" parent="."]

@@ -43,20 +43,23 @@ func setup_navserver():
 	Navigation2DServer.region_set_transform(region, Transform())
 	Navigation2DServer.region_set_map(region, map)
 
-	setupNavMesh(region)
+
+# Load the texture's based collision's polygon
+#	setupNavMesh(region)
+
+
 	# wait for Navigation2DServer sync to adapt to made changes
 	yield(get_tree(), "physics_frame")
 
 func setupNavMesh(region):
-	var texturePolygons = $PolyFromTexture.polygons
-	var navmesh = $Navmesh.navpoly
-	
+#	var navmesh = $Navmesh.navpoly
 	var poly = polyFrom($PolyFromTexture)
 	Navigation2DServer.region_set_navpoly(region, poly)
 
 #TODO: debug purposes; Remove this later
 func _draw():
-	draw_colored_polygon($PolyFromTexture.polygon, Color.darkorange)
+	pass
+#	draw_colored_polygon($PolyFromTexture.polygon, Color.darkorange)
 
 func polyFrom(node: Polygon2D):
 	var polygon = NavigationPolygon.new()
