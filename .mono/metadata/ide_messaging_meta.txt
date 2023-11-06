@@ -1,2 +1,0 @@
-﻿53830
-/Applications/My Apps/Godot_mono 3.5.3.app/Contents/MacOS/Godot

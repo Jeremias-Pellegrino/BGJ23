@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sx_bats.ogg-b561d3dc64c8741721e4c5b25d970f73.oggstr"
+
+[deps]
+
+source_file="res://Assets/Musica/sx_bats.ogg"
+dest_files=[ "res://.import/sx_bats.ogg-b561d3dc64c8741721e4c5b25d970f73.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

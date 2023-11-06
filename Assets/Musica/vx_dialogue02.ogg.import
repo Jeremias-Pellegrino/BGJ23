@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/vx_dialogue02.ogg-61c391b0d54fa9a5d9e4fb85b8b76f8c.oggstr"
+
+[deps]
+
+source_file="res://Assets/Musica/vx_dialogue02.ogg"
+dest_files=[ "res://.import/vx_dialogue02.ogg-61c391b0d54fa9a5d9e4fb85b8b76f8c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

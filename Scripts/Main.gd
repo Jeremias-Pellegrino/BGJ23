@@ -11,13 +11,12 @@ func _ready():
 	# use call deferred to make sure the entire SceneTree Nodes are setup
 	# else yield on 'physics_frame' in a _ready() might get stuck
 	call_deferred("setup_navserver")
-	
+
 	#Para integrar el audio/sxf. hay un stream player para correr 1 musica continua atras
 	#y una funcion que te agrega un nodo con timer la cantidad de sfx que quieras
-	
+
 #	$AudioManager/MusicPlayer.stream = sarasa
 #	$AudioManager.playSFX(dentro de N segundos, "path al sfx")
-	
 
 func _process(delta):
 	var walk_distance = character_speed * delta

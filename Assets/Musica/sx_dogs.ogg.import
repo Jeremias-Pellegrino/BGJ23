@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sx_dogs.ogg-e164e127f8037c154e730da16801761a.oggstr"
+
+[deps]
+
+source_file="res://Assets/Musica/sx_dogs.ogg"
+dest_files=[ "res://.import/sx_dogs.ogg-e164e127f8037c154e730da16801761a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

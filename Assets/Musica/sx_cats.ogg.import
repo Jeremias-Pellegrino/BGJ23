@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sx_cats.ogg-a0299b7394af1c9d9396869e8acd124f.oggstr"
+
+[deps]
+
+source_file="res://Assets/Musica/sx_cats.ogg"
+dest_files=[ "res://.import/sx_cats.ogg-a0299b7394af1c9d9396869e8acd124f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

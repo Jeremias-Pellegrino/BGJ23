@@ -42,5 +42,7 @@ margin_right = 644.0
 margin_bottom = 572.0
 text = "COMENZAR"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="timeout" from="SineLight4/Timer" to="SineLight4" method="_on_Timer_timeout"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
